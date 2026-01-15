@@ -1,0 +1,8 @@
+#!/bin/bash -e
+
+ROOT="$(pwd)"
+POLICY="$(make-sandbox-policy "$ROOT")"
+
+echo "$POLICY"
+
+sandbox-exec -p "$POLICY" "$@"
